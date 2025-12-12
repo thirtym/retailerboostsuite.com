@@ -31,7 +31,15 @@
         if (alertText && alertText.textContent.includes('Alpha is')) {
           alertText.textContent = 'Now open for Shopify merchants in the USA';
         }
-      }, 100);
+        // Add copyright footer if not already present
+        if (!document.querySelector('footer.copyright-footer')) {
+          var footer = document.createElement('footer');
+          footer.className = 'copyright-footer';
+          footer.style.cssText = 'padding:3rem 2rem 2rem;text-align:center;color:#aaa;border-top:1px solid rgba(0,217,163,0.2);margin-top:0;background:#0a0a0a;';
+          footer.innerHTML = '<p style="margin:0;font-size:0.9rem;color:#aaa;">© 2025 RetailerBoost. All rights reserved.</p>';
+          document.body.appendChild(footer);
+        }
+      }, 500);
     });
     // Also check after a delay for React hydration
     setTimeout(function() {
@@ -39,7 +47,15 @@
       if (alertText && alertText.textContent.includes('Alpha is')) {
         alertText.textContent = 'Now open for Shopify merchants in the USA';
       }
-    }, 1000);
+      // Add copyright footer if not already present
+      if (!document.querySelector('footer.copyright-footer')) {
+        var footer = document.createElement('footer');
+        footer.className = 'copyright-footer';
+        footer.style.cssText = 'padding:3rem 2rem 2rem;text-align:center;color:#aaa;border-top:1px solid rgba(0,217,163,0.2);margin-top:0;background:#0a0a0a;';
+        footer.innerHTML = '<p style="margin:0;font-size:0.9rem;color:#aaa;">© 2025 RetailerBoost. All rights reserved.</p>';
+        document.body.appendChild(footer);
+      }
+    }, 1500);
   </script>
 </head>
   <body>
@@ -475,9 +491,6 @@
                                                                                                                                                                                                                                                                                       </div>
                                                                                                                                                                                                                                                                                     </div>
                                                                                                                                                                                                                                                                                   </section>
-                                                                                                                                                                                                                                                                                  <footer class="Footer_footer__xyz123" style="padding:3rem 2rem 2rem;text-align:center;color:#888;border-top:1px solid rgba(255,255,255,0.1);margin-top:4rem;">
-                                                                                                                                                                                                                                                                                    <p style="margin:0;font-size:0.9rem;">© 2025 RetailerBoost. All rights reserved.</p>
-                                                                                                                                                                                                                                                                                  </footer>
                                                                                                                                                                                                                                                                                   <!--$--><!--/$-->
                                                                                                                                                                                                                                                                                 </main>
                                                                                                                                                                                                                                                                                 <script src="/_next/static/chunks/webpack-57d7292b708c4567.js" id="_R_" async=""></script>
