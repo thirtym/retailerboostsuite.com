@@ -14,6 +14,17 @@
     <meta name="robots" content="noindex, nofollow, nocache"/>
     <meta name="googlebot" content="noindex, nofollow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/>
     <style>
+      /* Prevent horizontal scroll */
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+      /* Ensure nav stays sticky and on top */
+      .Navigation_nav__PiYhp {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+      }
       /* Glow animation for nav CTA */
       @keyframes glowPulse {
         0%, 100% {
