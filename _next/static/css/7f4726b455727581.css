@@ -3,7 +3,7 @@
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(10, 10, 10, .95);
+  background:rgba(11, 19, 20, .95);
   -webkit-backdrop-filter:blur(10px);
   backdrop-filter:blur(10px);
 }
@@ -44,8 +44,8 @@
   top:calc(100% + .5rem);
   left:50%;
   transform:translateX(-50%);
-  background:rgba(10, 10, 10, .98);
-  border:1px solid rgba(0, 217, 163, .3);
+  background:rgba(11, 19, 20, .98);
+  border:1px solid rgba(36, 124, 255, .3);
   border-radius:12px;
   display:grid;
   box-shadow:0 10px 40px rgba(0, 0, 0, .5);
@@ -71,7 +71,7 @@
   gap:.5rem;
 }
 .Navigation_dropdownLabel__AQjud {
-  color:#00d9a3;
+  color:#247CFF;
 }
 .Navigation_dropdownLabelHidden__BM6it,
 .Navigation_dropdownLabel__AQjud {
@@ -99,7 +99,7 @@
 .Navigation_dropdownLink__Tl_UN:hover {
 }
 .Navigation_dropdownLinkHighlight__XpjPm {
-  color:#00d9a3;
+  color:#247CFF;
   text-decoration:none;
   font-size:.85rem;
   font-weight:600;
@@ -112,7 +112,7 @@
 .Navigation_dropdownLinkHighlight__XpjPm:hover {
 }
 .Navigation_ctaButton__jQlAz {
-  background:linear-gradient(135deg, #00d9a3, #00b386);
+  background:linear-gradient(135deg, #247CFF, #1A64CC);
   color:#000;
   padding:.75rem 1.5rem;
   border-radius:6px;
@@ -123,7 +123,7 @@
 }
 .Navigation_ctaButton__jQlAz:hover {
   transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(0, 217, 163, .3);
+  box-shadow:0 4px 12px rgba(36, 124, 255, .3);
 }
 .Navigation_mobileMenuButton__kNPNq {
   display:none;
@@ -145,7 +145,7 @@
   flex-direction:column;
   gap:.5rem;
   padding:1.5rem 2rem;
-  background:rgba(10, 10, 10, .98);
+  background:rgba(11, 19, 20, .98);
   border-top:1px solid rgba(255, 255, 255, .1);
   max-height:calc(100vh - 80px);
   overflow-y:auto;
@@ -162,7 +162,7 @@
 .Navigation_mobileNavLink__2_DB8:hover {
 }
 .Navigation_mobileCtaButton__Netdi {
-  background:linear-gradient(135deg, #00d9a3, #00b386);
+  background:linear-gradient(135deg, #247CFF, #1A64CC);
   color:#000;
   padding:1rem 1.5rem;
   border-radius:6px;
@@ -196,13 +196,13 @@
 }
 .Navigation_mobileAccordionIcon__Y7A0Y {
   font-size:1.25rem;
-  color:#00d9a3;
+  color:#247CFF;
   font-weight:300;
   width:24px;
 }
 .Navigation_mobileAccordionContent__sT7ob {
   padding:.5rem 0 1rem 1rem;
-  border-left:2px solid rgba(0, 217, 163, .3);
+  border-left:2px solid rgba(36, 124, 255, .3);
   margin-left:.5rem;
   display:flex;
   flex-direction:column;
@@ -218,7 +218,7 @@
 .Navigation_mobileSubLink__mk0MD:hover {
 }
 .Navigation_mobileSubLinkHighlight__FatOs {
-  color:#00d9a3;
+  color:#247CFF;
   text-decoration:none;
   font-size:.95rem;
   font-weight:600;
@@ -271,20 +271,20 @@ body {
   font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  background:linear-gradient(to bottom right, #111827, #000000);
+  background:#0B1314;
   background-attachment:fixed;
   color:#ffffff;
 }
 :root {
-  --color-bg-primary:#000000;
-  --color-bg-secondary:#0a0a0a;
-  --color-bg-tertiary:#1a1a1a;
+  --color-bg-primary:#0B1314;
+  --color-bg-secondary:#0B1314;
+  --color-bg-tertiary:#1A1F26;
   --color-text-primary:#ffffff;
   --color-text-secondary:#e5e5e5;
-  --color-text-tertiary:#cccccc;
-  --color-text-muted:#999999;
-  --color-accent-primary:#00d9a3;
-  --color-accent-secondary:#00b386;
+  --color-text-tertiary:#A7AEB6;
+  --color-text-muted:#A7AEB6;
+  --color-accent-primary:#247CFF;
+  --color-accent-secondary:#1A64CC;
   --color-border:rgba(255, 255, 255, 0.1);
 }
 h1,
