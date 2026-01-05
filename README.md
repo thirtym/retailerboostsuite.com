@@ -80,6 +80,7 @@ Typically:
 | "Do you contact our clients?" | Only the email used to sign up receives communication. If you sign up on behalf of clients, you get all emails. We never pitch, upsell, or market to clients. |
 | "What's the catch?" | If we're losing money on a store, we may dial back investment. But if we generate nothing, you pay nothing. |
 | "Do you guarantee sales?" | No. Volume varies. But no sales = no charge. |
+| "If this works, why isn't everyone doing it?" | Fronting ad spend is irrational at small scale. It only works with portfolio-level diversification across thousands of SKUs and accounts. We apply a hedge-fund-style approach - absorb variance, aim for small margins, scale massively. It requires a different capital structure and risk appetite than agency economics allow for. |
 | "How do you make money?" | We keep the difference between commission and ad spend. We're aiming to break even on most orders - it's a volume play. |
 
 ---
