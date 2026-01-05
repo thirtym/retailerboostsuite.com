@@ -665,6 +665,16 @@
                 </div>
               </div>
               
+              <div class="faq-item">
+                <button class="faq-question" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+                  <h4>If this works, why isn't everyone doing it?</h4>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Because fronting ad spend is irrational at small scale. The math only works with portfolio-level diversification across millions of SKUs and thousands of accounts. Agencies doing CPA are still capped by client budgets. We apply a hedge-fund-style approach: absorb variance across a huge portfolio, aim for small margins per order, and scale. It requires a different capital structure and risk appetite than agency economics allow for.</p>
+                </div>
+              </div>
+              
               <div class="faq-item" style="border-bottom:none;">
                 <button class="faq-question" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
                   <h4>How does RetailerBoost make money?</h4>
@@ -682,6 +692,66 @@
               <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg, #247CFF, #1A64CC);color:#fff;text-decoration:none;font-size:1rem;font-weight:700;border-radius:8px;transition:all .3s ease;">Book a Call</a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Comparison: Agency CPA vs RetailerBoost -->
+      <section style="padding:4rem 2rem;">
+        <div style="max-width:900px;margin:0 auto;">
+          <h2 style="font-size:2rem;font-weight:700;color:#fff;margin-bottom:0.5rem;text-align:center;">Traditional Agency CPA vs RetailerBoost</h2>
+          <p style="text-align:center;color:#aaa;font-size:1rem;margin-bottom:2rem;">Two different models. Both performance-based. One key difference.</p>
+          
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+            <!-- Header -->
+            <div style="background:rgba(255,255,255,0.05);padding:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);border-right:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#aaa;font-size:0.9rem;font-weight:600;margin:0;text-transform:uppercase;letter-spacing:0.05em;">Agency CPA Model</p>
+            </div>
+            <div style="background:rgba(36,124,255,0.1);padding:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#247CFF;font-size:0.9rem;font-weight:600;margin:0;text-transform:uppercase;letter-spacing:0.05em;">RetailerBoost</p>
+            </div>
+            
+            <!-- Who funds ads -->
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);border-right:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Who funds the ads</p>
+              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Client budget</p>
+            </div>
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(36,124,255,0.03);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Who funds the ads</p>
+              <p style="color:#fff;font-size:1rem;margin:0;font-weight:600;">We do. 100%.</p>
+            </div>
+            
+            <!-- Who takes the risk -->
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);border-right:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Who takes the risk</p>
+              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Client (ad spend is their money)</p>
+            </div>
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(36,124,255,0.03);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Who takes the risk</p>
+              <p style="color:#fff;font-size:1rem;margin:0;font-weight:600;">We do. Entirely.</p>
+            </div>
+            
+            <!-- Budget ceiling -->
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);border-right:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Budget ceiling</p>
+              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Capped by what client will spend</p>
+            </div>
+            <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(36,124,255,0.03);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">Budget ceiling</p>
+              <p style="color:#fff;font-size:1rem;margin:0;font-weight:600;">No ceiling. We invest what works.</p>
+            </div>
+            
+            <!-- If campaign loses money -->
+            <div style="padding:1rem 1.25rem;border-right:1px solid rgba(255,255,255,0.1);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">If campaign loses money</p>
+              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Client loses money</p>
+            </div>
+            <div style="padding:1rem 1.25rem;background:rgba(36,124,255,0.03);">
+              <p style="color:#aaa;font-size:0.85rem;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.03em;">If campaign loses money</p>
+              <p style="color:#fff;font-size:1rem;margin:0;font-weight:600;">We lose money. Client pays nothing.</p>
+            </div>
+          </div>
+          
+          <p style="text-align:center;color:#aaa;font-size:0.95rem;margin-top:1.5rem;">Both models are smart. Ours just removes the budget conversation entirely.</p>
         </div>
       </section>
 
