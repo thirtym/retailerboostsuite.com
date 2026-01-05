@@ -53,7 +53,7 @@ Typically:
 - "We fund the ad spend, you keep the client relationship"
 - "No sales = no charge"
 - "We target inventory your campaigns aren't reaching"
-- "100% incremental - we only target products Google is ignoring"
+- "100% incremental - we run campaigns on the inventory you choose"
 - "You're in control - you decide which products we can target"
 - "You set the scope via categories or tags"
 - "It's additive, not competitive"
