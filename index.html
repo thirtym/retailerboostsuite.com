@@ -911,5 +911,62 @@
       </div>
       <p style="margin:0;font-size:0.9rem;color:#aaa;">© 2025 RetailerBoost. All rights reserved.</p>
     </footer>
+    
+    <!-- RetailerBoost Signup Attribution Tracking -->
+    <!-- NOT FOR AD TRACKING - This tracks signup attribution only -->
+    <script>
+    (function() {
+      'use strict';
+      
+      // Only run if we have UTM params or a referrer worth tracking
+      var params = new URLSearchParams(window.location.search);
+      var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+      var hasUTM = utmParams.some(function(p) { return params.has(p); });
+      var referrer = document.referrer || '';
+      
+      // Only track if we have UTMs or a meaningful referrer
+      if (!hasUTM && !referrer) {
+        return;
+      }
+      
+      // Build the tracking URL
+      var trackUrl = 'https://app.retailerboost.com/signup-attribution?';
+      var trackParams = [];
+      
+      // Add UTM params
+      utmParams.forEach(function(p) {
+        var value = params.get(p);
+        if (value) {
+          trackParams.push(p + '=' + encodeURIComponent(value));
+        }
+      });
+      
+      // Add referrer
+      if (referrer) {
+        trackParams.push('referrer=' + encodeURIComponent(referrer));
+      }
+      
+      // Add the domain where this was captured (for debugging)
+      trackParams.push('captured_on=' + encodeURIComponent(window.location.hostname));
+      
+      trackUrl += trackParams.join('&');
+      
+      // Load the tracking pixel in a hidden iframe
+      var iframe = document.createElement('iframe');
+      iframe.src = trackUrl;
+      iframe.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;border:none;';
+      iframe.setAttribute('aria-hidden', 'true');
+      iframe.setAttribute('tabindex', '-1');
+      
+      // Append to body when ready
+      if (document.body) {
+        document.body.appendChild(iframe);
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.appendChild(iframe);
+        });
+      }
+    })();
+    </script>
   </body>
 </html>
