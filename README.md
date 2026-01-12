@@ -12,6 +12,45 @@ Static HTML - deploy to any web server or hosting platform.
 
 ---
 
+## UTM Tracking
+
+The page includes JavaScript that handles UTM parameters for signup links.
+
+### How It Works
+
+1. When a visitor arrives from a campaign with UTM params (e.g., `?utm_campaign=agency-outreach`), those params are captured.
+2. When clicking "Get Started", the captured params are passed through to the signup URL.
+3. If no UTM params are present, defaults are used.
+
+### Default Values
+
+| Parameter | Default Value |
+|-----------|---------------|
+| `utm_source` | Current hostname (e.g., `retailerboostapp.com`) |
+| `utm_medium` | `outbound` |
+| `utm_campaign` | `email` |
+| `utm_content` | Button location (e.g., `nav`, `hero`, `footer-cta`) |
+
+### Adding New Signup Links
+
+To add a new signup link that preserves UTM params:
+
+```html
+<a href="https://app.retailerboost.com/signup" data-signup="your-location">Get Started</a>
+```
+
+The `data-signup` attribute sets the fallback `utm_content` value for that button location.
+
+### Example Flow
+
+1. Visitor clicks email link: `https://retailerboostapp.com/?utm_source=sendgrid&utm_campaign=agency-dec-2025`
+2. Visitor clicks "Get Started" in hero
+3. Redirects to: `https://app.retailerboost.com/signup?utm_source=sendgrid&utm_medium=outbound&utm_campaign=agency-dec-2025&utm_content=hero`
+
+The incoming `utm_source` and `utm_campaign` are preserved, while `utm_content` uses the button location default.
+
+---
+
 ## Target Persona
 
 **Shopify agencies** who manage Google Ads/Shopping for e-commerce clients.
