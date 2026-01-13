@@ -1,0 +1,154 @@
+# RetailerBoost Landing Pages - Cursor Rules
+
+## Language & Spelling
+
+- Use **American English** spellings (e.g., "color" not "colour", "optimize" not "optimise", "center" not "centre")
+- Use American date formats where applicable (MM/DD/YYYY)
+
+## Code Style
+
+### HTML Structure
+
+- Keep HTML semantic and accessible
+- Use descriptive `id` attributes for anchor links (e.g., `id="pricing"`, `id="faq"`)
+- Prefer inline styles for one-off styling; use `<style>` blocks for repeated patterns
+- Always include `alt` text for images
+- Use `rel="noopener"` with `target="_blank"` links
+
+### JavaScript
+
+- Use vanilla JavaScript - no frameworks required for these static pages
+- Use `'use strict';` in all script blocks
+- Prefer `var` for browser compatibility (no transpilation)
+- Use IIFEs to avoid polluting global scope
+- Add clear comments explaining what scripts do (especially tracking scripts)
+
+### CSS
+
+- Use CSS custom properties (variables) for colors when adding new styles
+- Mobile-first responsive design
+- Prefer `rem` units for typography, `px` for borders/shadows
+- Use `rgba()` for semi-transparent backgrounds
+
+## Components & Modularity
+
+- Extract repeated HTML patterns into clearly commented sections
+- Use consistent naming conventions for CSS classes
+- Group related content into `<section>` elements with descriptive comments
+- Keep FAQ items in a consistent structure for easy additions
+
+## Content Guidelines
+
+### Tone (from README.md)
+
+- Confident, calm, senior
+- No hype, no buzzwords
+- Prefer clarity over cleverness
+- Short paragraphs, clear sections
+
+### Messaging Do's
+
+- "Incremental sales" - every sale we generate is a sale that wasn't happening before
+- "We fund the ad spend, you keep the client relationship"
+- "No sales = no charge"
+- "We're ad spend investors, not an agency"
+- "You're in control"
+
+### Messaging Don'ts
+
+- Avoid "growth hack", "unlock", "revolutionary"
+- Avoid "guaranteed results"
+- Avoid anything suggesting we compete with agencies
+- Avoid anything suggesting we want the client relationship
+
+### Emojis
+
+- **Limit emoji use** - only where they add genuine clarity or visual hierarchy
+- Prefer icons or visual design over emojis for UI elements
+- If emojis are used, keep them subtle and professional
+
+## Typography
+
+- Use dashes (`-`) not em dashes (`—`) for consistency
+- Use `<strong>` for emphasis, not `<b>`
+- Use proper heading hierarchy (h1 → h2 → h3)
+
+## Links & CTAs
+
+### Signup Links
+
+- All signup CTAs should use `data-signup` attribute for UTM tracking
+- Always include `target="_blank" rel="noopener"` for external links
+- The UTM handler script will dynamically set the correct href
+
+```html
+<a href="https://app.retailerboost.com/signup" data-signup="location-name" target="_blank" rel="noopener">
+  Get Started
+</a>
+```
+
+### Calendly Links
+
+- Use the standard Calendly popup pattern:
+
+```html
+<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;">
+  Book a Call
+</a>
+```
+
+## Tracking Scripts
+
+### Order of Scripts
+
+1. Google Tag Manager (in `<head>`)
+2. RB2B tracking (in `<head>`)
+3. UTM parameter handler (in `<head>`)
+4. Calendly widget (before `</body>`)
+5. Signup attribution tracking (before `</body>`)
+
+### Adding New Tracking
+
+- Add clear comments explaining what the script does
+- Note if it's for ad tracking vs signup attribution (these are different!)
+- Test that scripts don't block page rendering
+
+## File Organization
+
+```
+/
+├── index.html          # Main landing page
+├── README.md           # Persona, messaging, objection handling
+├── .cursorrules        # This file
+├── .gitignore          # Git ignore rules
+├── SIGNUP_ATTRIBUTION_SPEC.md  # UTM tracking documentation
+└── assets/
+    └── images/         # Team photos, logos
+```
+
+## Testing Checklist
+
+Before deploying changes:
+
+- [ ] All links work (especially signup CTAs)
+- [ ] Mobile responsive (test at 375px width)
+- [ ] No console errors
+- [ ] UTM tracking fires correctly (check Network tab)
+- [ ] Calendly popup works
+- [ ] Images load correctly
+- [ ] Text is readable (contrast, size)
+
+## Performance
+
+- Optimize images before adding (compress, appropriate dimensions)
+- Lazy load images below the fold where possible
+- Keep JavaScript minimal and non-blocking
+- Avoid large third-party dependencies
+
+## Accessibility
+
+- Maintain keyboard navigation for interactive elements
+- Use sufficient color contrast (WCAG AA minimum)
+- Include `aria-hidden="true"` on decorative elements
+- Ensure focus states are visible on interactive elements
+

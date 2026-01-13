@@ -105,7 +105,7 @@ This document contains the complete Terms & Conditions, Privacy Policy, and Cook
 
 4.2 Merchant retains all legal and beneficial right, title, and interest in and to Merchant Content, including all Intellectual Property Rights therein.
 
-4.3 Merchant grants RetailerBoost a worldwide, non-exclusive, royalty-free licence to use Merchant Content for the purpose of creating and running Google Shopping Ads campaigns during the Term.
+4.3 Merchant grants RetailerBoost a worldwide, non-exclusive, royalty-free license to use Merchant Content for the purpose of creating and running Google Shopping Ads campaigns during the Term.
 
 #### 5. PAYMENT AND BILLING
 
