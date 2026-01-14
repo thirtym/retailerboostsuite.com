@@ -89,13 +89,16 @@
 
 ### Calendly Links
 
-- Use the standard Calendly popup pattern:
+- Use the `openCalendly()` helper function which passes UTM params automatically:
 
 ```html
-<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;">
+<a href="#" onclick="openCalendly('calendly-location');return false;">
   Book a Call
 </a>
 ```
+
+- The location identifier (e.g., `calendly-nav`, `calendly-hero`, `calendly-faq`, `calendly-footer`) becomes the `utm_content` fallback value
+- Incoming UTM params from the page URL are automatically passed to Calendly
 
 ## Tracking Scripts
 

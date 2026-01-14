@@ -49,6 +49,16 @@ The `data-signup` attribute sets the fallback `utm_content` value for that butto
 
 The incoming `utm_source` and `utm_campaign` are preserved, while `utm_content` uses the button location default.
 
+### Calendly Links
+
+Calendly popup links also pass UTM params using the `openCalendly()` helper:
+
+```html
+<a href="#" onclick="openCalendly('calendly-hero');return false;">Book a Call</a>
+```
+
+The location identifier becomes the `utm_content` fallback. Incoming UTM params are passed to Calendly automatically.
+
 ---
 
 ## Target Persona

@@ -211,6 +211,27 @@
           return base + '?' + utmParams.toString();
         };
         
+        // Open Calendly popup with UTM params
+        // Uses incoming params if present, otherwise falls back to defaults
+        window.openCalendly = function(contentDefault) {
+          var utmObj = {
+            utmSource: defined(incomingUtm.source) ? incomingUtm.source : window.location.hostname,
+            utmMedium: defined(incomingUtm.medium) ? incomingUtm.medium : 'outbound',
+            utmCampaign: defined(incomingUtm.campaign) ? incomingUtm.campaign : 'email',
+            utmContent: defined(incomingUtm.content) ? incomingUtm.content : contentDefault
+          };
+          
+          // Only add term if present
+          if (defined(incomingUtm.term)) {
+            utmObj.utmTerm = incomingUtm.term;
+          }
+          
+          Calendly.initPopupWidget({
+            url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF',
+            utm: utmObj
+          });
+        };
+        
         // Update all signup links on page load
         document.addEventListener('DOMContentLoaded', function() {
           var links = document.querySelectorAll('a[data-signup]');
@@ -237,7 +258,7 @@
             <a href="#faq" style="color:#e5e5e5;text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.2s;">FAQ</a>
           </div>
           <div style="display:flex;gap:0.75rem;align-items:center;">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;" style="color:#e5e5e5;text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.2s;">Book a Call</a>
+            <a href="#" onclick="openCalendly('calendly-nav');return false;" style="color:#e5e5e5;text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.2s;">Book a Call</a>
             <a href="https://app.retailerboost.com/signup" data-signup="nav" target="_blank" rel="noopener" class="Navigation_ctaButton__jQlAz">Get Started</a>
           </div>
         </div>
@@ -254,7 +275,7 @@
 
             <div class="Hero_ctaGroup__BKron" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
               <a href="https://app.retailerboost.com/signup" data-signup="hero" target="_blank" rel="noopener" class="Hero_ctaPrimary____c6c" style="color:#fff;padding:1.25rem 3rem;font-size:1.2rem;">Get Started in 5 Minutes</a>
-              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Got questions? <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;" style="color:#fff;text-decoration:underline;">Book a call</a></p>
+              <p style="color:#e5e5e5;font-size:1rem;margin:0;">Got questions? <a href="#" onclick="openCalendly('calendly-hero');return false;" style="color:#fff;text-decoration:underline;">Book a call</a></p>
             </div>
 
             <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;">
@@ -755,7 +776,7 @@
             
             <div style="text-align:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
               <p style="color:#e5e5e5;font-size:1.1rem;margin-bottom:1rem;">Got another question? Let's talk.</p>
-              <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg, #247CFF, #1A64CC);color:#fff;text-decoration:none;font-size:1rem;font-weight:700;border-radius:8px;transition:all .3s ease;">Book a Call</a>
+              <a href="#" onclick="openCalendly('calendly-faq');return false;" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg, #247CFF, #1A64CC);color:#fff;text-decoration:none;font-size:1rem;font-weight:700;border-radius:8px;transition:all .3s ease;">Book a Call</a>
             </div>
           </div>
         </div>
@@ -891,7 +912,7 @@
               <p class="FooterCTA_ctaText__U6Uiz">15 minutes to see if this makes sense for your agency.</p>
               <div style="display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;">
                 <a href="https://app.retailerboost.com/signup" data-signup="footer-cta" target="_blank" rel="noopener" class="FooterCTA_ctaButton__U5pyF">Get Started</a>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sturrock/intro?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=247CFF'});return false;" style="display:inline-flex;align-items:center;justify-content:center;padding:1rem 2rem;background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;border-radius:8px;transition:all .3s ease;">Book a Call</a>
+                <a href="#" onclick="openCalendly('calendly-footer');return false;" style="display:inline-flex;align-items:center;justify-content:center;padding:1rem 2rem;background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;border-radius:8px;transition:all .3s ease;">Book a Call</a>
               </div>
               <p class="FooterCTA_ctaSubtext__5fUoe">No upfront costs • No sales, no charge • Cancel anytime</p>
             </div>
